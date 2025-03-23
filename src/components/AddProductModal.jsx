@@ -57,7 +57,7 @@ const AddProductsModal = ({ onClose }) => {
       if (response.status === 201) {
         dispatch(addProduct(response.data)); 
         alert('Product added successfully!');
-        onClose(); // Close the modal
+        onClose(); 
       }
     } catch (error) {
       const errorMessage = error.response?.data?.error || error.message;
@@ -77,7 +77,6 @@ const AddProductsModal = ({ onClose }) => {
         {error && <p className="text-red-500 mb-4">{error}</p>}
 
         <div className="grid grid-cols-3 gap-4">
-          {/* Products */}
           <div>
             <h3 className="text-lg font-semibold mb-2">Products</h3>
             {products.map((product) => (
@@ -93,7 +92,6 @@ const AddProductsModal = ({ onClose }) => {
             ))}
           </div>
 
-          {/* Materials */}
           <div>
             <h3 className="text-lg font-semibold mb-2">Material</h3>
             {materials.map((material) => (
@@ -109,7 +107,6 @@ const AddProductsModal = ({ onClose }) => {
             ))}
           </div>
 
-          {/* Grades */}
           <div>
             <h3 className="text-lg font-semibold mb-2">Grades</h3>
             {grades.map((grade) => (
@@ -126,7 +123,6 @@ const AddProductsModal = ({ onClose }) => {
           </div>
         </div>
 
-        {/* Inputs */}
         <div className="mt-4 grid grid-cols-2 gap-4">
           <input
             type="text"
